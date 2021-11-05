@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* 기본설정 */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    line-height: 20px;
+    color: #333;
+    font-weight: 300;
+    background-color: rgb(226, 226, 226);
+}
+
+ul, ol{
+    list-style: none;
+}
+
+input{
+    font-family: 'Noto Sans KR', sans-serif;
+    vertical-align: top;
+}
+
+img{
+    vertical-align: top;
+    border: 0;
+    width: 100%;
+    height: auto;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+.hide{
+    position: absolute;
+    top: -99999px;
+    left: -99999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+fieldset{border: 0;}
+
+legend{display: none;}
+
+.ta, .pc{
+    display: none;
+}
+
+/* 반응형 기본설정 */
+
+#wrap{
+    position: relative;
+    min-width: 320px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-top: 55px;
+}
+@media screen and (min-width:768px) {
+    .ta{
+        display: block;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    #wrap{
+        width: 1200px;
+        margin: 0 auto;
+        padding-top: 100px;
+    }
+    .mo{
+        display: none;
+    }
+    .pc{
+        display: block;
+    }
+}

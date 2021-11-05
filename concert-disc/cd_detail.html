@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>음악 SNS</title>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;500;700&display=swap" rel="stylesheet">
+<!-- css -->
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/style.css">
+<!-- jQuery 연결 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- jQuery UI 연결 -->
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>       
+</head>
+<body>
+    <div id="wrap_cd_detail">
+        <header id="header">
+            <div id="headerIn">
+                <h1 class="h_logo">로고</h1>
+                <!-- 모바일 햄버거 메뉴 -->
+                <div class="h_menu mo"><a href="#">메뉴 열기</a></div>
+                <div class="h_right mo">
+                    <div class="mo-btn-search">
+                        <a href="">
+                            음악검색
+                        </a>
+                    </div>
+                    <div class="mo-profile"><a href="#">프로필 보기</a></div>
+                </div>
+                <div class="pc-search pc">
+                    <form action="" name="h_search_box">
+                        <!-- 폼을 필드셋으로 묶어줄수있음... -->
+                        <fieldset>
+                            <!-- 레전드는 필드셋영역의 '제목'임 -->
+                            <legend>음악검색</legend>
+                            <input type="text" class="hs_input_text" name="hs_pd_name" id="hs_pd_name">
+                            <input type="button" class="hs_input_btn" id="hs_search_submit">
+                        </fieldset>
+                    </form>
+                </div> <!--.pc-search-->
+            </div>
+        </header>
+        <!-- header ends -->
+
+
+        <div id="container">
+            <div class="cdList">
+                <ul class="cdList-ul">
+                    <li>
+                        <p class="cd"><audio src="./music/save_me.mp3"></audio><img src="./img/user_album/saveMe_img.png" alt=""><span class="circle"></span></p>
+                        <dl><a href="">
+                            <dt class="musicTitle">Save Me</dt>
+                            <dd class="musician">Gartusic<span></span>&#64;ggggaaaa0000</dd>
+                            <dd class="musicTxt">음악에 대한 설명 미리보기 ... 말줄임표 사용 2줄 설명까지 허용합니다.
+                                음악에 대한 설명 미리보기 ... 말줄임표 사용 2줄 설명까지 허용합니다.
+                            </dd>
+                        </a></dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <script src="./js/script.js"></script>
+</body>
