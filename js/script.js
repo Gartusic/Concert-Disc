@@ -133,7 +133,7 @@ $(function(){
         $('#logged-in').css('display','none');
         return false;
     })
-    //사이드 속의 메뉴 바 열기
+    //사이드 속의 팔로우 메뉴 바 열기
     $('.following h2').click(function(){
         
         let d = $(this).siblings('ul').css('display');
@@ -158,9 +158,6 @@ $(function(){
         }
         return false;
     })
-
-
-
 
 
 

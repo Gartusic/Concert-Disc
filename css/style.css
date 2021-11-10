@@ -401,8 +401,42 @@ header{
     padding-left: 20%;
     margin-right: 10px;
 }
+.sideL-1,.sideL-2{
+    padding: 20px;
+}
 .L_prevBtn{
     right: 10px;
+}
+.playList{
+    display: block;
+    overflow-y: scroll;
+    height: 30vh;
+}
+.playList li a{
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.1), transparent);
+    margin: 3px auto;
+    width: 100%;
+    height: 55px;
+    color: #ddd;
+}
+.playList_pic{
+    width: 45px;
+    height: 45px;
+    margin: 3px 20px 3px 10px;
+    background-color: rgb(220, 220, 220);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+}
+.playList_title{
+    font-size: 14px;
+    line-height: 20px;
+}
+.playList_musician{
+    font-size: 12px;
+    line-height: 20px;
+    opacity: 0.7;
 }
 
 
@@ -489,8 +523,149 @@ header{
     left: 40px;
     font-size: 13px;
 }
-/* 기본화면 끝! */
+/* 기본 메인화면 끝! */
 
+/* cd_detail 기본화면 시작 */
+#wrap_cd_detail #container_cd_detail .cdList{
+    padding-bottom: 20px;
+}
+#wrap_cd_detail #container_cd_detail .cdList li{
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
+
+#wrap_cd_detail #container_cd_detail .cdList .cd{
+    width: 93%; /*cd크기 조정하기.. */
+    height: 93%;
+    margin: auto;
+    padding: 0; /*패딩 잘못만지면 cd 찌그러지더라...*/
+}
+#wrap_cd_detail #container_cd_detail .cdList dl a{
+    height: 100%;
+    min-height: none;
+    overflow: auto;
+    text-overflow: unset;
+}
+#wrap_cd_detail #container_cd_detail .cdList .musicTitle,
+#wrap_cd_detail #container_cd_detail .cdList .musician,
+#wrap_cd_detail #container_cd_detail .cdList .musicTxt{
+    display: block;
+    overflow: visible;
+    text-overflow: unset;
+    white-space: unset;
+    /*word-break: break-all; /*줄바꿈 안될때... 글자단위로 줄바꿈 해주는 속성*/
+    word-break: normal; /*영어는 단어단위로, 한글은 글자단위로 줄바꿈하는 속성*/
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
+    height: auto;
+    margin: 10px 0 10px 0;
+}
+#wrap_cd_detail #container_cd_detail .cdList .musicTitle{
+    font-size: 35px;
+    line-height: 45px;
+    margin-bottom: 20px;
+}
+#wrap_cd_detail #container_cd_detail .cdList .musician{
+    font-size: 17px;
+    opacity: 0.8;
+    margin-bottom: 70px;
+}
+#wrap_cd_detail #container_cd_detail .cdList .musicTxt{
+    opacity: 0.8;
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+/* 기본화면 댓글 페이지 reply*/
+#wrap_cd_detail .replies{
+    padding: 20px;
+}
+#wrap_cd_detail .reply{
+    display: flex;
+    margin-bottom: 20px;
+    position: relative; /*댓글메뉴 포지셔닝 하기 위함*/
+}
+#wrap_cd_detail .reply_img{
+    width: 20%;
+    height: auto;
+    overflow: hidden;
+}
+#wrap_cd_detail .reply_img a{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.5);
+}
+#wrap_cd_detail .reply_img a img{
+    object-fit: cover;
+    width: 100%;
+}
+#wrap_cd_detail .reply_box{
+    width: 80%;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+#wrap_cd_detail .replyerAndDate{
+    display: flex;
+    justify-content: space-between;
+}
+#wrap_cd_detail .reply_address{
+    font-size: 11px;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    margin: 0;
+}
+#wrap_cd_detail .reply_content{
+    padding-bottom: 15px;
+}
+#wrap_cd_detail .reply_like,
+#wrap_cd_detail .reply_heart,
+#wrap_cd_detail .reply_menu{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-size: 15px auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -99999px;
+    margin: 0 auto;
+}
+#wrap_cd_detail .reply_like{
+    background-image: url(../img/icons/iconmonstr-thumb-10-48.png);
+    margin-right: 30px;
+    position: relative;
+}
+#wrap_cd_detail .reply_like::after{ /*좋아요 갯수 남기기 위한 곳...*/
+    content: "345";
+    font-size: 10px;
+    position: absolute;
+    right: -30px;
+    top: 0;
+    color:white;
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+#wrap_cd_detail .reply_heart{
+    background-image: url(../img/icons/iconmonstr-favorite-2-48.png);
+}
+#wrap_cd_detail .reply_menu{
+    background-image: url(../img/icons/iconmonstr-menu-11-48.png);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+/* 기본화면 댓글 페이지 끝 */
+/* cd_detail 기본화면 끝 */
+/* !!!모든 기본화면 끝!!!! */
+
+/* 태블릿 화면 시작 */
 @media screen and (min-width:768px) {
     
     /* 태블릿 - 헤더 */
@@ -504,7 +679,6 @@ header{
         margin-left: 30px;
         margin-right: 20px;
     }
-
 
     /* 태블릿 - 컨테이너 */
 
@@ -616,7 +790,7 @@ header{
 
     /*pc 메인화면 사이드*/
     .side{
-        margin-top: 40px;
+        margin-top: 30px;
         width: 20%; 
         /* background-color: rgba(240, 200, 240, 0.8); */
         background-color: transparent;
@@ -686,10 +860,7 @@ header{
         border-left: 2px solid rgb(166, 108, 186);
         transform: rotate(-45deg);
     }
-    .following h2.on:before{
-        transform: rotate(135deg); /*펼쳤을떄*/
-    }
-    
+
     .following h2{
         padding: 5px 0;
         border-bottom: 2px solid #CCC;
@@ -707,7 +878,7 @@ header{
         overflow-y: scroll;
         height: 75vh;
     }
-    .following li a{
+    .following li a, .playList li a{
         background: linear-gradient(to top, rgba(255, 255, 255, 0.3), transparent);
         color: #555;
     }
@@ -752,13 +923,19 @@ header{
     /*pc화면 사이드바 L  */
     .sideL{
         left: 0; /*js로 펼칠것임니다*/
-        padding-left: 0%;
+        padding-left: 20px;
         margin-right: 10px;
+        padding-top: 0px;
         overflow: hidden;
     }
-    .L_prevBtn{
-        right: auto;
+    .sideL-1{
+        padding-bottom: 0px;
+        margin-bottom: 0px;
     }
-
+    .playList{
+        width: 230px;
+        overflow-y: scroll;
+        height: 40vh;
+    }
 
 }
