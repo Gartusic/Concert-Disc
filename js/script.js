@@ -1,12 +1,7 @@
 
 
-
+/* 메인화면 */
 $(function(){
-
-    //swipe
-    
-
-
     // 메인화면 CD 재생 관련
     let musicFile = new Audio($(this).find('audio').attr('src'));
     $('.cdList .cd')
@@ -63,12 +58,7 @@ function isElementUnderBottom(elem, triggerDiff) {
       }
     })
   }
-  
   window.addEventListener('scroll', handleScroll);// 스크롤 함수 실행
-
-
-    
-
 
 
 
@@ -123,16 +113,17 @@ $(function(){
     })
 
     //로그인 관련
-    $('#loginBtn').click(function(){
+    $('#loginBtn').click(function(){ // 로그인 실행
         $('#loginContainer').css('display','none');
         $('#logged-in').css('display','block');
         return false;
     })
-    $('#logoutBtn').click(function(){
+    $('#logoutBtn').click(function(){ // 로그아웃 실행
         $('#loginContainer').css('display','block');
         $('#logged-in').css('display','none');
         return false;
     })
+
     //사이드 속의 팔로우 메뉴 바 열기
     $('.following h2').click(function(){
         
@@ -159,12 +150,34 @@ $(function(){
         return false;
     })
 
-
-
-
-    // 재생 바 보여주기 , 숨기기
+    // 우측 하단 버튼 클릭 시 재생 바 보여주기 , 숨기기
     $('.musicBtn')
         .click(function(){
             $(this).siblings('.playBar').toggle("slide", { direction: "right" }, 500);
         })
 })
+/*메인화면 관련 js 끝 */
+
+
+/*cd_detail js 시작*/
+$('#wrap_cd_detail .reply_like') /*좋아요 버튼을 누르면*/
+    .click(function(){
+        $(this).toggleClass('likeOn');
+})
+$('#wrap_cd_detail .reply_heart') /*하트 버튼을 누르면*/
+    .click(function(){
+        $(this).toggleClass('heartOn');
+})
+
+$('#wrap_cd_detail .reply_menu>a') /*댓글메뉴 버튼을 누르면*/
+    .click(function(){
+        if($(this).siblings('ul').css('display') == 'block'){
+            $('#wrap_cd_detail .reply_menu>ul').css('display','none');
+            $(this).siblings('ul').css('display','none');
+        } else{
+            $('#wrap_cd_detail .reply_menu>ul').css('display','none');
+            $(this).siblings('ul').css('display','block');
+        }
+        
+})
+/*cd_detail js 끝 */

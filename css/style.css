@@ -573,19 +573,23 @@ header{
 }
 #wrap_cd_detail #container_cd_detail .cdList .musicTxt{
     opacity: 0.8;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 16px;
+    line-height: 25px;
     margin-bottom: 20px;
 }
 
 /* 기본화면 댓글 페이지 reply*/
-#wrap_cd_detail .replies{
+#wrap_cd_detail h3, #wrap_cd_detail .replies{
     padding: 20px;
+    color: #555;
 }
 #wrap_cd_detail .reply{
     display: flex;
     margin-bottom: 20px;
     position: relative; /*댓글메뉴 포지셔닝 하기 위함*/
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 5px;
 }
 #wrap_cd_detail .reply_img{
     width: 20%;
@@ -594,6 +598,7 @@ header{
 }
 #wrap_cd_detail .reply_img a{
     display: block;
+    margin: 0 auto;
     width: 50px;
     height: 50px;
     background-color: #fff;
@@ -626,7 +631,7 @@ header{
 }
 #wrap_cd_detail .reply_like,
 #wrap_cd_detail .reply_heart,
-#wrap_cd_detail .reply_menu{
+#wrap_cd_detail .reply_menu>a{
     display: inline-block;
     width: 30px;
     height: 30px;
@@ -635,14 +640,18 @@ header{
     background-position: center;
     text-indent: -99999px;
     margin: 0 auto;
+    transition: 0.5s;
 }
 #wrap_cd_detail .reply_like{
     background-image: url(../img/icons/iconmonstr-thumb-10-48.png);
     margin-right: 30px;
     position: relative;
 }
+#wrap_cd_detail .reply_like.likeOn{
+    background-image: url(../img/icons/iconmonstr-thumb-9-48.png);
+}
 #wrap_cd_detail .reply_like::after{ /*좋아요 갯수 남기기 위한 곳...*/
-    content: "345";
+    content: "";
     font-size: 10px;
     position: absolute;
     right: -30px;
@@ -655,11 +664,28 @@ header{
 #wrap_cd_detail .reply_heart{
     background-image: url(../img/icons/iconmonstr-favorite-2-48.png);
 }
-#wrap_cd_detail .reply_menu{
+#wrap_cd_detail .reply_heart.heartOn{
+    background-image: url(../img/icons/iconmonstr-favorite-1-48.png);
+}
+#wrap_cd_detail .reply_menu>a{
     background-image: url(../img/icons/iconmonstr-menu-11-48.png);
     position: absolute;
     bottom: 0;
     right: 0;
+}
+#wrap_cd_detail .reply_menu>ul{
+    display: none;
+    position: absolute;
+    bottom: 30px;
+    right: 10px;
+    width: 100px;
+    line-height: 30px;
+    background-color: rgb(247, 236, 245);
+    border: 1px solid rgb(194, 194, 194);
+    border-radius: 5px;
+}
+#wrap_cd_detail .reply_menu li{
+    border-bottom: 1px solid rgb(194, 194, 194);
 }
 /* 기본화면 댓글 페이지 끝 */
 /* cd_detail 기본화면 끝 */
@@ -667,7 +693,6 @@ header{
 
 /* 태블릿 화면 시작 */
 @media screen and (min-width:768px) {
-    
     /* 태블릿 - 헤더 */
     .h_menu a{
         margin-left: 20px;
@@ -681,8 +706,6 @@ header{
     }
 
     /* 태블릿 - 컨테이너 */
-
-
     .bottomLayer .musicBtn{
         bottom: 40px;
         right: 30px;
@@ -698,9 +721,17 @@ header{
         width: 85%;
         left: 10%;
     }
+
+    #wrap_cd_detail .reply_img a{
+        width: 80px;
+        height: 80px;
+    }
 }
 
 @media screen and (min-width:1200px) {
+    #wrap{
+        max-width: 1500px;
+    }
     .mo-btn-search, .mo-profile{
         display: none;
     }
@@ -938,4 +969,33 @@ header{
         height: 40vh;
     }
 
+    /* pc화면 : cd_detail */
+    #wrap_cd_detail{
+        max-width: 1500px;
+        margin: 100px auto;
+    }
+    #wrap_cd_detail .reply, #wrap_cd_detail h3{
+        padding: 30px;
+    }
+    #wrap_cd_detail h3{
+        font-size: 30px;
+    }
+    #wrap_cd_detail .reply_img a{
+        margin: 0; /*초기화*/
+        margin-left: auto; /* 우측 정렬*/
+        margin-right: 10px;
+    }
+    #wrap_cd_detail .reply_box{
+        padding: 0 30px 0 30px;
+    }
+    #wrap_cd_detail .reply_menu>a{
+        bottom: 30px;
+        right: 30px;
+    }
+    #wrap_cd_detail .reply_menu>ul{
+        bottom: 60px;
+        right: 40px;
+        width: 200px;
+        line-height: 30px;
+    }
 }
