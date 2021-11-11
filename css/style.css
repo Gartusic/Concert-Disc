@@ -579,9 +579,32 @@ header{
 }
 
 /* 기본화면 댓글 페이지 reply*/
+#wrap_cd_detail h3{
+    font-weight: 400;
+}
 #wrap_cd_detail h3, #wrap_cd_detail .replies{
     padding: 20px;
-    color: #555;
+    color: #666;
+}
+#wrap_cd_detail .reply_write form{
+    display: flex;
+    justify-content: center;
+}
+#wrap_cd_detail textarea, #wrap_cd_detail button{
+    border: none;
+    border-radius: 5px;
+}
+#wrap_cd_detail textarea{
+    padding: 3px 5px;
+    margin-right: 5px;
+    width: 75%;
+}
+#wrap_cd_detail textarea[placeholder]{
+    font-family: sans-serif;
+}
+#wrap_cd_detail button{
+    width: 10%;
+    color: #666;
 }
 #wrap_cd_detail .reply{
     display: flex;
@@ -618,6 +641,9 @@ header{
 #wrap_cd_detail .replyerAndDate{
     display: flex;
     justify-content: space-between;
+}
+#wrap_cd_detail .replyer{
+    margin-bottom: 5px;
 }
 #wrap_cd_detail .reply_address{
     font-size: 11px;
@@ -970,7 +996,7 @@ header{
     }
 
     /* pc화면 : cd_detail */
-    #wrap_cd_detail{
+    body #wrap_cd_detail{
         max-width: 1500px;
         margin: 100px auto;
     }
